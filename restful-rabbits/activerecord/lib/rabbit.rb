@@ -1,5 +1,5 @@
 class Rabbit
-  include Datamapper::Resource
+  include DataMapper::Resource
   property :id,           Serial
   property :name,         String, :required => true
   property :description,  Text
