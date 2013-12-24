@@ -1,14 +1,10 @@
-# http://ididitmyway.herokuapp.com/past/2010/9/21/restful_rabbits/
 require 'bundler'
 Bundler.require
+require_relative './lib/rabbit'
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/rabbits.db")
+class App < Sinatra::Application
+  set :databse, "sqlite3:///rabbits.db"
 
-Dir.glob('./lib/*.rb') do |model|
-  require model
-end
-
-# class App < Sinatra::Application
   #list all rabbits
   get '/rabbits' do
     @rabbits = Rabbit.all
@@ -69,6 +65,4 @@ end
     haml :show
   end
 
-  DataMapper.auto_upgrade!
-
-# end
+end
