@@ -5,7 +5,7 @@
     %ul#rabbits
     - @rabbits.each do |rabbit|
       %li{:id => "rabbit-#{rabbit.id}"}
-        %a(href="/rabbits/#{rabbit.id}")= rabbit.name
+        %a(href="/rabbits/#{rabbit.id}")=rabbit.name
         %a(href="/rabbits/edit/#{rabbit.id}") EDIT
         %a(href="/rabbits/delete/#{rabbit.id}") DELETE
   - else

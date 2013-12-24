@@ -29,13 +29,13 @@ class App < Sinatra::Application
 
   # edit rabbit
   get '/rabbits/edit/:id' do
-    @rabbit = Rabbit.find(id: params[:id])
+    @rabbit = Rabbit[id: params[:id]]
     haml :edit
   end
 
   # update rabbit
   put '/rabbits/:id' do
-    @rabbit = Rabbit.find(id: params[:id])
+    @rabbit = Rabbit[id: params[:id]]
     if @rabbit.update(params[:rabbit])
       status 201
       redirect '/rabbits/' + params[:id]
@@ -47,19 +47,19 @@ class App < Sinatra::Application
 
   # delete rabbit confirmation
   get '/rabbits/delete/:id' do
-    @rabbit = Rabbit.find(id: params[:id])
+    @rabbit = Rabbit[id: params[:id]]
     haml :delete
   end
 
   # delete rabbit
   delete '/rabbits/:id' do
-    Rabbit.find(id: params[:id]).destroy
+    Rabbit[id: params[:id]].destroy
     redirect '/rabbits'
   end
 
   # show rabbit
   get '/rabbits/:id' do
-    @rabbit = Rabbit.find(id: params[:id])
+    @rabbit = Rabbit[id: params[:id]]
     haml :show
   end
 
