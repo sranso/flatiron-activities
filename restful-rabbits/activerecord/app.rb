@@ -3,7 +3,7 @@ Bundler.require
 require_relative './lib/rabbit'
 
 class App < Sinatra::Application
-  set :databse, "sqlite3:///rabbits.db"
+  set :database, "sqlite3:///rabbits.db"
 
   #list all rabbits
   get '/rabbits' do
