@@ -2,3 +2,18 @@
   border-bottom: 1px solid #ccc;
   padding: 20px 0;
 }
+.container.navbar.navbar-inverse {
+  margin-top: 20px;
+}
+#myCarousel {
+  margin-top: -90px;
+}
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 20px;
+  margin-bottom: -90px;
+}
