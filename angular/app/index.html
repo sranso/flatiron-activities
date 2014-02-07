@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="animalTime">
+<head>
+  <title>angular animal</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/controllers.js"></script>
+</head>
+<body ng-controller="AnimalListCtrl">
+  <div class="container">
+    <li ng-repeat="animal in animals">
+      <img ng-src="img/animals/{{animal.name}}.jpg">
+      <h1>{{animal.name}}</h1>
+      <p>Hope: {{animal.hope}}</p>
+      <p>Fear: {{animal.fear}}</p>
+    </li>
+  </div>
+</body>
+</html>
